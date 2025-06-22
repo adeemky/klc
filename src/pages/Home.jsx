@@ -9,11 +9,11 @@ const Home = () => {
   const sliderRef = useRef(null);
 
   const [text] = useTypewriter({
-    words: ["Groupe KLC Construction"],
+    words: ["Groupe KLC"],
     loop: false,
     typeSpeed: 100,
     deleteSpeed: 100,
-    delaySpeed: 3000,
+    delaySpeed: 5000,
   });
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const Home = () => {
             variants={fadeIn("down", 0.59, 0.4)}
             initial="hidden"
             whileInView="show"
-            className="text-4xl md:text-5xl font-extrabold font-ancizar text-red-400 text-left"
+            className="text-3xl md:text-5xl font-extrabold font-ancizar text-red-400 text-left"
           >
             {text}
             <br />
