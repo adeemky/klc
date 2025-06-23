@@ -34,7 +34,7 @@ const Footer = () => {
                 Groupe KLC
               </span>
             </div>
-            <p className="text-gray-600 mb-6 pe-10">
+            <p className="text-gray-600 mb-6 md:text-left md:w-80 text-center">
               Le Groupe KLC accompagne vos projets avec expertise et engagement, en proposant
               des solutions sur mesure pour chaque étape de votre développement.
             </p>

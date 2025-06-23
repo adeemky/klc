@@ -133,6 +133,7 @@ const Platrerie = () => {
           </p>
           <Link
             to="/contact"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition"
           >
             Demander une visite

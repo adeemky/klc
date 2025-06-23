@@ -53,11 +53,11 @@ const Home = () => {
             variants={fadeIn("down", 0.59, 0.4)}
             initial="hidden"
             whileInView="show"
-            className="text-3xl md:text-5xl font-extrabold font-ancizar text-red-400 text-left"
+            className="text-5xl md:text-5xl font-extrabold font-ancizar text-red-400 text-left"
           >
             {text}
             <br />
-            <span className="text-gray-700">Maisons & Tiny House</span>
+            <span className="text-gray-700 text-3xl md:text-5xl">Maisons & Tiny House</span>
           </motion.h1>
           <motion.p
             variants={fadeIn("up", 0.59, 0.4)}
@@ -145,10 +145,10 @@ const Home = () => {
           className="flex overflow-x-auto snap-x snap-mandatory space-x-24 px-20 md:space-x-48 md:px-48 pb-4 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100"
         >
           {[
-            "/images/h2.jpg",
-            "/images/e2.jpeg",
-            "/images/h3.webp",
-            "/images/e4.jpeg",
+            "/images/9e.jpeg",
+            "/images/1a.jpeg",
+            "/images/6h.jpeg",
+            "/images/7k.jpeg",
             "/images/e5.jpeg",
             "/images/e6.jpeg",
             "/images/e8.jpeg",
@@ -192,6 +192,7 @@ const Home = () => {
         >
           <Link
             to="/projects"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="bg-emerald-800 text-white text-lg px-8 py-5 rounded-xl font-semibold shadow-md hover:bg-emerald-600 transition"
           >
             Voir plus →

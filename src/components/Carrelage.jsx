@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import c1 from "../images/c1.png";
 import c2 from "../images/c2.jpeg";
 import c3 from "../images/c3.jpg";
@@ -157,9 +158,13 @@ const Carrelage = () => {
             Vous avez un projet de carrelage ? Demandez une visite gratuite : nous venons sur
             place pour vous conseiller et établir un devis adapté.
           </p>
-          <button className="bg-white text-green-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition">
+          <Link
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            to="/contact"
+            className="inline-block bg-white text-green-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition"
+          >
             Demander une visite
-          </button>
+          </Link>
         </div>
       </div>
     </div>
