@@ -23,6 +23,24 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const menu = document.getElementById("mobile-menu");
+      const toggle = document.getElementById("menu-toggle");
+      if (menu && !menu.contains(event.target) && toggle && !toggle.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   const navLinks = [
     { href: "/", label: "Accueil" },
     { href: "/projects", label: "Nos Projets" },
@@ -48,12 +66,12 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-transparent border-none shadow-none"
-          : "bg-gradient-to-br from-white via-neutral-50 to-white backdrop-blur-sm border-b border-gray-50 shadow-sm"
+          : "bg-gradient-to-br from-white via-neutral-100 to-white backdrop-blur-sm border-b border-gray-50 shadow-md"
       }`}
     >
-      <div className="w-full flex justify-between items-center container mx-auto px-4 sm:px-6 lg:px-8 md:h-20 h-16">
+      <div className="w-full flex justify-between items-center container mx-auto px-4 sm:px-6 lg:px-8 md:h-20 h-20">
         {/* Logo & Brand */}
-        <Link to="/">
+        <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <div className="flex items-center gap-1 cursor-pointer opacity-80 hover:opacity-100">
             <img src={logo} width="60" />
             <h3
@@ -74,6 +92,7 @@ const Navbar = () => {
               <Link
                 key={index}
                 to={link.href}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className={`text-md font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-green-900 after:transition-all ${
                   location.pathname === link.href
                     ? "text-green-800 after:w-full"
@@ -93,6 +112,7 @@ const Navbar = () => {
                       <li key={idx}>
                         <Link
                           to={item.href}
+                          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                           className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                         >
                           {item.label}
@@ -108,6 +128,7 @@ const Navbar = () => {
         {/* CU Button */}
         <Link
           to="/contact"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="hidden md:block bg-green-800 text-white px-6 py-2.5 rounded-lg hover:bg-green-900 text-md font-medium transition-all hover:shadow-lg hover:shadow-green-100"
@@ -116,6 +137,7 @@ const Navbar = () => {
         </Link>
 
         <button
+          id="menu-toggle"
           className="md:hidden p-2"
           onClick={() => {
             setIsMenuOpen(!isMenuOpen);
@@ -133,6 +155,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <motion.div
+          id="mobile-menu"
           variants={fadeIn("down", 1.59, 0.2)}
           initial="hidden"
           animate="show"
@@ -154,7 +177,10 @@ const Navbar = () => {
                 >
                   <Link
                     to={link.href}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
                     className={`block text-md font-medium py-2 ${
                       location.pathname === link.href
                         ? "text-green-900"
@@ -183,7 +209,10 @@ const Navbar = () => {
                     >
                       <Link
                         to={item.href}
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
                         className="block text-sm font-medium py-1 text-gray-500 hover:text-gray-900 pl-4"
                       >
                         {item.label}
@@ -203,7 +232,10 @@ const Navbar = () => {
             >
               <Link
                 to="/contact"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 className="block text-center bg-green-800 text-white px-6 py-2.5 rounded-lg hover:bg-green-900 text-md font-medium transition-all hover:shadow-lg hover:shadow-green-100"
               >
                 Nous Contacter

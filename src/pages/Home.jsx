@@ -40,9 +40,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div className=" text-gray-800">
+    <div className="text-gray-800 px-4 md:px-0">
       {/* Hero Section */}
-      <section className="h-screen flex flex-col md:flex-row items-center justify-between px-6 py-12 md:px-24">
+      <section className="h-screen flex flex-col md:flex-row items-center justify-between px-6 py-12 md:px-24 md:pt-6">
         <motion.div
           variants={fadeIn("right", 0.59, 0.3)}
           initial="hidden"
@@ -74,7 +74,7 @@ const Home = () => {
           variants={fadeIn("left", 0.59, 0.4)}
           initial="hidden"
           whileInView="show"
-          className="md:w-1/2 p-4"
+          className="md:w-1/2 md:p-4"
         >
           <img
             src="/images/ex1.jpeg"
@@ -164,7 +164,7 @@ const Home = () => {
               <img
                 src={img}
                 alt={`Réalisation ${index + 1}`}
-                className="w-full h-[500px] object-cover"
+                className="w-full h-[350px] md:h-[500px] object-cover"
               />
             </div>
           ))}
@@ -244,10 +244,10 @@ const Home = () => {
 
       {/* Call to Action */}
       <section
-        className="py-24 px-6 md:px-24 bg-cover bg-center text-center"
+        className="py-24 md:px-24 bg-cover bg-center text-center"
         style={{ backgroundImage: 'url("/images/h8.webp")' }}
       >
-        <div className="p-12 rounded-xl shadow-lg inline-block">
+        <div className="p-8 md:p-12 rounded-xl shadow-lg inline-block">
           <motion.h2
             variants={fadeIn("up", 0.59, 0.4)}
             initial="hidden"
@@ -288,6 +288,7 @@ const Home = () => {
           <motion.div variants={fadeIn("up", 0.79, 0.4)} initial="hidden" whileInView="show">
             <Link
               to="/contact"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="inline-block bg-white text-green-800 text-xl px-10 py-6 rounded-xl font-bold shadow-md hover:bg-green-800 hover:text-white transition mt-10"
             >
               Nous contacter
