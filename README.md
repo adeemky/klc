@@ -1,6 +1,6 @@
 # Groupe KLC - Official Website
 
-This project is a showcase website developed for **Groupe KLC**, a construction company operating France.
+This project is a showcase website developed for **Groupe KLC**, a construction company operating in France.
 
 🔗 Live Site: [https://www.groupeklc-construction.com/](https://www.groupeklc-construction.com/)
 
