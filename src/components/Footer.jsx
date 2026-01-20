@@ -30,7 +30,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div>
             <div className="flex items-center justify-center md:justify-start gap-1 mb-6">
-              <img src={logo} width="50" />
+              <img alt="logo" src={logo} width="50" />
               <span style={{ color: "#1b4f33" }} className="text-xl ml-1">
                 Groupe KLC
               </span>
@@ -105,7 +105,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="flex flex-col text-gray-600 text-sm items-center opacity-90 hover:opacity-100"
             >
-              <img width={30} src={ka} />
+              <img alt="ak" width={30} src={ka} />
               <span>Conçu par</span>
               <span>Adem Kaya</span>
             </a>

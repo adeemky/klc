@@ -20,8 +20,6 @@ const ProjectsComponent = () => {
         </p>
         {customProjects.map(
           ({ images, title, price, size, features, guarantee, finalNote }, index) => {
-            const isEven = index % 2 === 0;
-
             return (
               <div
                 key={title}
@@ -35,7 +33,7 @@ const ProjectsComponent = () => {
                       const width = e.target.clientWidth;
                       const newIndex = Math.round(scrollLeft / width);
                       setActiveIndexes((prev) =>
-                        prev.map((val, i) => (i === index ? newIndex : val))
+                        prev.map((val, i) => (i === index ? newIndex : val)),
                       );
                     }}
                   >
@@ -97,7 +95,7 @@ const ProjectsComponent = () => {
                 </div>
               </div>
             );
-          }
+          },
         )}
       </div>
     </section>
