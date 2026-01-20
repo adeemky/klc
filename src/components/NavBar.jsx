@@ -73,7 +73,7 @@ const Navbar = () => {
         {/* Logo & Brand */}
         <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <div className="flex items-center gap-1 cursor-pointer opacity-80 hover:opacity-100">
-            <img src={logo} width="60" />
+            <img alt="logo" src={logo} width="60" />
             <h3
               style={{ color: "#1b4f33" }}
               className={`font-semibold font-ancizar text-3xl text-emerald-900 transition-all duration-500 transform ${
