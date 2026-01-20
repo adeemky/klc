@@ -2,6 +2,7 @@ import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
 import logo from "../images/logo.png";
+import ka from "../images/ka.png";
 
 const Footer = () => {
   const footerLinks = {
@@ -67,7 +68,7 @@ const Footer = () => {
                   <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
                     <FaLinkedinIn className="w-5 h-5" />
                   </div>
-                  <span>Deniz Kilic</span>
+                  <span>LinkedIn</span>
                 </a>
               </li>
             </ul>
@@ -89,9 +90,25 @@ const Footer = () => {
         </motion.div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-200 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-sm">Copyright © {new Date().getFullYear()}</p>
+        <div className="flex justify-between border-t border-gray-200 mt-12 pt-8">
+          <div className="">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-gray-600 text-sm">
+                ©{new Date().getFullYear()} Tous droits réservés.
+              </p>
+            </div>
+          </div>
+          <div>
+            <a
+              href="https://www.kayaadem.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col text-gray-600 text-sm items-center opacity-90 hover:opacity-100"
+            >
+              <img width={30} src={ka} />
+              <span>Conçu par</span>
+              <span>Adem Kaya</span>
+            </a>
           </div>
         </div>
       </div>
